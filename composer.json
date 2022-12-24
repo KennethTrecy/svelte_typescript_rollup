@@ -1,0 +1,37 @@
+{
+	"name": "kennethtrecy/web_template",
+	"type": "library",
+	"description": "A simple web template for general reuse.",
+	"keywords": ["back-end", "web", "template-repository"],
+	"homepage": "https://github.com/KennethTrecy/web_template",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Kenneth Trecy Tobias",
+			"email": "web.kennethtobias@gmail.com",
+			"homepage": "https://github.com/KennethTrecy",
+			"role": "Developer"
+		}
+	],
+	"require": {
+
+	},
+	"require-dev": {
+
+	},
+	"autoload": {
+
+	},
+	"autoload-dev": {
+
+	},
+	"scripts": {
+
+	},
+	"minimum-stability": "dev",
+	"prefer-stable": true,
+	"config": {
+		"sort-packages": true,
+		"secure-http": true
+	}
+}
