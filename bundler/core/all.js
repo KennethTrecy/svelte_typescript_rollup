@@ -51,9 +51,9 @@ export default function(environment = DEVELOPMENT, generalPostPlugins = [
 ]) {
 	return [
 		{
-			"input": "src/app.svelte",
+			"input": "src/index.js",
 			"output": {
-				"file": "dist/app.js",
+				"file": "dist/index.js",
 				"format": "iife",
 				"interop": "auto",
 				"name": "app"
