@@ -1,7 +1,5 @@
 <script>
-	let name = "Alice"
+	import HelloWorld from "./hello_world.svelte"
 </script>
 
-<p>
-	Hello {name}!
-</p>
+<HelloWorld name="Alice"/>
