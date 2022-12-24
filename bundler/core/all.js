@@ -1,7 +1,9 @@
-import { DEVELOPMENT } from "./environments";
+import { join } from "path"
 import esbuildPlugin from "rollup-plugin-esbuild-transform"
 import sveltePlugin from "rollup-plugin-svelte"
 import nodeResolvePlugin from "@rollup/plugin-node-resolve"
+import autoPrepocess from "svelte-preprocess"
+import { DEVELOPMENT } from "./environments";
 
 export default function(environment = DEVELOPMENT, generalPostPlugins = [
 	/**
@@ -10,7 +12,18 @@ export default function(environment = DEVELOPMENT, generalPostPlugins = [
 	 * See: https://www.npmjs.com/package/rollup-plugin-svelte
 	 */
 	sveltePlugin({
-
+		/**
+		 * `svelte-preprocess` is also required to transpile Typescript.
+		 *
+		 * See:
+		 * https://github.com/sveltejs/svelte-preprocess/blob/main/docs/preprocessing.md#typescript
+		 */
+		"preprocess": autoPrepocess({
+			"typescript": {
+				"tsconfigDirectory": join(__dirname, "../.."),
+				"tsconfigFile": "tsconfig.json"
+			}
+		})
 	}),
 	nodeResolvePlugin({
 		"browser": true,
@@ -25,7 +38,14 @@ export default function(environment = DEVELOPMENT, generalPostPlugins = [
 	 */
 	esbuildPlugin([
 		{
-			"loader": "js"
+			"loader": "ts",
+			"tsconfig": join(__dirname, "../../tsconfig.json")
+		},
+		{
+			"loader": "js",
+			// Remove the comment below to minify the output code.
+			// "minify": true,
+			"output": true,
 		}
 	])
 ]) {
