@@ -4,6 +4,11 @@ import sveltePlugin from "rollup-plugin-svelte"
 import nodeResolvePlugin from "@rollup/plugin-node-resolve"
 
 export default function(environment = DEVELOPMENT, generalPostPlugins = [
+	/**
+	 * The following are required to compile the Svelte components.
+	 *
+	 * See: https://www.npmjs.com/package/rollup-plugin-svelte
+	 */
 	sveltePlugin({
 
 	}),
@@ -12,6 +17,12 @@ export default function(environment = DEVELOPMENT, generalPostPlugins = [
 		"exportConditions": [ "svelte" ],
 		"extensions": [ ".svelte" ]
 	}),
+
+	/**
+	 * Allows fast transformation of modules.
+	 *
+	 * See: https://www.npmjs.com/package/rollup-plugin-esbuild-transform
+	 */
 	esbuildPlugin([
 		{
 			"loader": "js"
