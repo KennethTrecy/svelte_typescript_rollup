@@ -1,8 +1,9 @@
 import { join } from "path"
-import esbuildPlugin from "rollup-plugin-esbuild-transform"
-import sveltePlugin from "rollup-plugin-svelte"
-import nodeResolvePlugin from "@rollup/plugin-node-resolve"
 import autoPrepocess from "svelte-preprocess"
+import sveltePlugin from "rollup-plugin-svelte"
+import commonjsPlugin from "@rollup/plugin-commonjs"
+import nodeResolvePlugin from "@rollup/plugin-node-resolve"
+import esbuildPlugin from "rollup-plugin-esbuild-transform"
 import { DEVELOPMENT } from "./environments";
 
 export default function(environment = DEVELOPMENT, generalPostPlugins = [
@@ -28,8 +29,11 @@ export default function(environment = DEVELOPMENT, generalPostPlugins = [
 	nodeResolvePlugin({
 		"browser": true,
 		"exportConditions": [ "svelte" ],
-		"extensions": [ ".svelte" ]
+		"extensions": [ ".svelte" ],
+		"dedupe": [ "svelte" ]
 	}),
+
+	commonjsPlugin(),
 
 	/**
 	 * Allows fast transformation of modules.
