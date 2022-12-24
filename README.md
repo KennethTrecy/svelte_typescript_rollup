@@ -9,7 +9,7 @@ This is a demonstration on how to compile Svelte components with Typescript usin
 ### Steps
 1. Run `npm install` to install the dependencies.
 3. Run `npm run dev` to compile the files.
-4. Check the [index](./index.htm) on your local browser.
+4. Check the [index](./public/index.htm) on your local browser.
 
 ## Origin
 Some parts of the repository was based from [`rollup`] branch of [Web Template].
