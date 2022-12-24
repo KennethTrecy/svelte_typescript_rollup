@@ -1,6 +1,13 @@
 import { DEVELOPMENT } from "./environments";
+import esbuildPlugin from "rollup-plugin-esbuild-transform"
 
-export default function(environment = DEVELOPMENT, generalPostPlugins = []) {
+export default function(environment = DEVELOPMENT, generalPostPlugins = [
+	esbuildPlugin([
+		{
+			"loader": "js"
+		}
+	])
+]) {
 	return [
 		{
 			"input": "src/index.js",
