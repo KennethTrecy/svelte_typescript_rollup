@@ -1,7 +1,7 @@
 {
 	"name": "demo_20221224",
 	"description": "Demonstration of compiling Svelte file with Typescript using Rollup.",
-	"version": "0.1.0-dev",
+	"version": "0.1.0",
 	"homepage": "https://github.com/KennethTrecy/svelte_typescript_rollup",
 	"license": "MIT",
 	"main": "src/index.js",
