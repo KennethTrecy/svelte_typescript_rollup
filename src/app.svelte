@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import HelloWorld from "./hello_world.svelte"
 </script>
 
