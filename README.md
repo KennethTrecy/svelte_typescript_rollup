@@ -1,4 +1,4 @@
-# Demo 20222124
+# Demo 20221224
 This is a demonstration on how to compile Svelte components with Typescript using Rollup.
 
 ## Instructions
